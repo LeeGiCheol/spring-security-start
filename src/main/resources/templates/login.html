@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>스프링 시큐리티 예제</title>
+</head>
+<body>
+    <div th:if="${param.error}">
+        로그인 실패입니다.
+    </div>
+    <div th:if="${param.logout}">
+        로그아웃 되었습니다.
+    </div>
+    <form th:action="@{/login}" method="post">
+        <div><label>User Name : <input type="text" name="username"/></label></div>
+        <div><label>Password : <input type="password" name="password"/></label></div>
+        <div><input type="submit" value="Sign In"/></div>
+    </form>
+</body>
+</html>
